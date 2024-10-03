@@ -1,44 +1,51 @@
+import { useReducer } from "react";
 import "./App.css";
 
+const ACTIONS = {
+  ADD_DIGIT: 'add-digit',
+  CHOOSE_OPERATION: 'choose-operation',
+  CLEAR: 'clear',
+  DELETE_DIGIT: 'delete-digit',
+  EVALUATE: 'evaluate'
+}
+
+function reducer(state, {type, payload}){
+  switch(type){
+    case ACTIONS.ADD_DIGIT:
+      return {
+        ...state,
+        currentOperand: '${currentOperand}${payload.digit}'
+        // TODO: write logic cases + hooks
+      }
+  }
+}
+
 function App() {
+  const [{currentOperand, previousOperand, operation}, dispatch] = useReducer(reducer, {})
   return (
-    <div className="container">
-      <div className="calculator">
-        <form action="">
-          <div>
-            <input type="text"></input>
-          </div>
-          <div>
-              <input type='button' value='AC'/>
-              <input type='button' value='DE'/>
-              <input type='button' value='.'/>
-              <input type='button' value='/'/>
-            </div>
-            <div>
-              <input type='button' value='7'/>
-              <input type='button' value='8'/>
-              <input type='button' value='9'/>
-              <input type='button' value='*'/>
-            </div>
-            <div>
-              <input type='button' value='4'/>
-              <input type='button' value='5'/>
-              <input type='button' value='6'/>
-              <input type='button' value='+'/>
-            </div>
-            <div>
-              <input type='button' value='1'/>
-              <input type='button' value='2'/>
-              <input type='button' value='3'/>
-              <input type='button' value='-'/>
-            </div>
-            <div>
-              <input type='button' value='00'/>
-              <input type='button' value='0'/>
-              <input type='button' value='='/>
-            </div>
-        </form>
+    <div className="calculator-grid">
+      <div className="output">
+        <div className="previous-operand">{previousOperand} {operation}</div>
+        <div className="current-operand">{currentOperand}</div>
       </div>
+      <button className="span-two">AC</button>
+      <button>DEL</button>
+      <button>÷</button>
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>*</button>
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button>+</button>
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button>-</button>
+      <button>.</button>
+      <button>0</button>
+      <button className="span-two">=</button>
     </div>
   );
 }
