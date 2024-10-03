@@ -13,3 +13,13 @@
   background-color: white;
   
 }
+
+form input{
+  border: none;
+  outline: 0;
+  width: 60px;
+  height: 60px;
+  font-size: 16px;
+  background-color: rgb(53, 53, 185);
+  margin: 2px;
+}
