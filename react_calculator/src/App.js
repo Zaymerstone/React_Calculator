@@ -8,6 +8,7 @@ function App() {
         <form action="">
           <div>
             <input type = "text"></input>
+            <div></div>
           </div>
         </form>
       </div>
