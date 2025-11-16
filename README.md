@@ -72,5 +72,3 @@ Web Developer Intern | Frontend Developer Intern
 - 📧 Email: [egor.nesterov2002@gmail.com](mailto:egor.nesterov2002@gmail.com)  
 - 🔗 LinkedIn: [linkedin.com/in/enesterov22](https://www.linkedin.com/in/enesterov22/)  
 - 💬 Telegram: [t.me/Zaymerstone](https://t.me/Zaymerstone)
-```bash
-npm install
